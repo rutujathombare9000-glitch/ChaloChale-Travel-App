@@ -1,0 +1,59 @@
+/* Card Styles */
+.destination-card, .package-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover, .package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.destination-card .card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.destination-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.package-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.package-card .btn-primary {
+    transition: all 0.3s ease;
+}
+
+.package-card .btn-primary:hover {
+    transform: scale(1.02);
+}
+
+/* Package card image hover effect */
+.package-card .card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.package-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Badge hover effect */
+.package-card .badge {
+    transition: transform 0.2s ease;
+}
+
+.package-card:hover .badge {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .destination-card, .package-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Navbar menu bold styling */
+.navbar-nav .nav-link {
+    font-weight: bold !important;
+}
