@@ -9,33 +9,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Chalo Chale Travel App</title>
+    <style>
+        /* Navbar Custom Styles */
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand img {
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar-brand:hover img {
+            transform: rotate(5deg);
+        }
+
+        .nav-link {
+            padding: 0.75rem 1.25rem !important;
+            color: #212529 !important;
+            transition: color 0.3s ease, transform 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #f27a21 !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #f27a21;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+            left: 10%;
+        }
+
+        .nav-link.active {
+            color: #f27a21 !important;
+        }
+
+        .nav-link.active::after {
+            width: 80%;
+            left: 10%;
+        }
+
+        .btn-warning {
+            transition: all 0.3s ease;
+            border: 2px solid #f27a21;
+            background-color: #f27a21;
+        }
+
+        .btn-warning:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(242, 122, 33, 0.4);
+            background-color: #d15f0d;
+            border-color: #d15f0d;
+        }
+
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Mobile menu styles */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: #ffffff;
+                padding: 1rem;
+                margin-top: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-link {
+                padding: 0.75rem 1rem !important;
+                color: #212529 !important;
+            }
+
+            .btn-warning {
+                margin: 0.5rem 0;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 p-0 m-0">
-                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm">
                     <div class="container">
-                        <a href="#" class="navbar-brand fw-bold">
-                            <i class="fa-solid fa-plane-departure"></i> ChaloChale
+                        <a href="#" class="navbar-brand">
+                            <img src="images/Logo.jpeg" alt="ChaloChale Logo" height="70">
                         </a>
                         
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#menu">
-                            <span class="navbar-toggler-icon"></span>
+                            data-bs-target="#menu" style="border-color: #f27a21;">
+                            <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 30 30\'%3e%3cpath stroke=\'%23f27a21\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' stroke-width=\'2\' d=\'M4 7h22M4 15h22M4 23h22\'/%3e%3c/svg%3e');"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="menu">
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item"><a href="index.html" class="nav-link fw-bold active">Home</a></li>
-                                <li class="nav-item"><a href="destinations.html" class="nav-link fw-bold">Destinations</a></li>
-                                <li class="nav-item"><a href="packages.html" class="nav-link fw-bold">Packages</a></li>
-                                <li class="nav-item"><a href="booking.html" class="nav-link fw-bold">Booking</a></li>
+                        <div class="collapse navbar-collapse justify-content-center" id="menu">
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a href="#home" class="nav-link fw-bold active">Home</a></li>
+                                <li class="nav-item"><a href="#destinations" class="nav-link fw-bold">Destinations</a></li>
+                                <li class="nav-item"><a href="#packages" class="nav-link fw-bold">Tour Packages</a></li>
                                 <li class="nav-item"><a href="about.html" class="nav-link fw-bold">About</a></li>
                                 <li class="nav-item"><a href="contact.html" class="nav-link fw-bold">Contact</a></li>
                             </ul>
-                            <a href="signup.html" class="btn btn-warning ms-lg-3">Sign Up</a>
-                            <a href="login.html" class="btn btn-warning ms-lg-3">Login</a>
+                            <a href="booking.html" class="btn btn-warning ms-lg-3 rounded-pill px-4 fw-bold">Plan Your Trip</a>
                         </div>
                     </div>
                 </nav>
@@ -43,7 +154,7 @@
         </div>
     </div>
     <!-- Carousel Section Start -->
-    <div class="row">
+    <div class="row" id="home">
         <div class="col-md-12">
             <div id="travelCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
                 <div class="carousel-indicators">
@@ -57,7 +168,7 @@
                         <div class="carousel-caption">
                             <h2 class="fw-bold">Explore Beautiful Beaches</h2>
                             <p>Plan your next vacation with ChaloChale</p>
-                            <button class="btn btn-primary">Explore Now</button>
+                            <a href="#destinations" class="btn btn-primary">Explore Now</a>
                         </div>
                     </div>
                     <div class="carousel-item ">
@@ -65,7 +176,7 @@
                         <div class="carousel-caption">
                             <h2 class="fw-bold">Adventure in Mountains</h2>
                             <p>Discover Trekking and Hiking Packages</p>
-                            <button class="btn btn-primary">View Packages</button>
+                            <a href="#packages" class="btn btn-primary">View Packages</a>
                         </div>
                     </div>
                     <div class="carousel-item ">
@@ -73,7 +184,7 @@
                         <div class="carousel-caption">
                             <h2 class="fw-bold">Enjoy City Tours</h2>
                             <p>Book Affordable city travel plans</p>
-                            <button class="btn btn-primary">Book Trip</button>
+                            <a href="booking.html" class="btn btn-primary">Book Trip</a>
                         </div>
                     </div>
                 </div>
@@ -88,7 +199,7 @@
     </div> 
     <!-- Carousel Section End -->
     <!-- Service Section Start -->
-    <div class="row">
+    <div class="row" id="services">
         <div class="col-md-12">
             <section class="py-5 bg-light">
                 <div class="container">
@@ -116,7 +227,7 @@
     </div>
     <!-- Service Section End  -->
     <!-- Destination Card Start -->
-    <section class="py-5">
+    <section class="py-5" id="destinations">
         <div class="container">
             <h2 class="text-center fw-bold mb-4">Popular Destinations</h2>
             <div class="row g-4">
@@ -173,7 +284,7 @@
     </section>
     <!-- Destination Card End -->
     <!-- Packages Section Start -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light" id="packages">
         <div class="container">
             <h2 class="text-center fw-bold mb-4">Our Packages</h2>
             <div class="row g-4">
